@@ -14,7 +14,7 @@ class CrudController extends Controller
      */
     public function index()
     {
-        //
+        return view('crud.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class CrudController extends Controller
      */
     public function create()
     {
-        //
+        return view('crud.create');
     }
 
     /**
@@ -35,7 +35,11 @@ class CrudController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        // return $request;
+    Crud::create($request->all());
+    return back();
+
     }
 
     /**
@@ -46,7 +50,7 @@ class CrudController extends Controller
      */
     public function show(Crud $crud)
     {
-        //
+        return view('crud.show');
     }
 
     /**
@@ -57,7 +61,7 @@ class CrudController extends Controller
      */
     public function edit(Crud $crud)
     {
-        //
+        return view('crud.edit');
     }
 
     /**
