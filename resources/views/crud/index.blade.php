@@ -22,7 +22,54 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-2"></div>
-                <div class="col-md-8"></div>
+                <div class="col-md-8">
+                    <div class="table-responsive-sm">
+                        <table class="table table-primary">
+                            <thead>
+                                <tr>
+                                    <th scope="col">NO</th>
+                                    <th scope="col">name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Phone</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">City</th>
+                                    <th scope="col">Action</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($data as $key => $value)
+                                    <tr class="">
+                                        <td scope="row">{{ $key + 1 }}</td>
+                                        <td>{{ $value->name }}</td>
+                                        <td>{{ $value->email }}</td>
+                                        <td>{{ $value->phone }}</td>
+                                        <td>{{ $value->address }}</td>
+                                        <td>{{ $value->city }}</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <button type="submit"
+                                                    class="btn btn-success-sm btn-outline-success">show</button>&nbsp;
+                                                <button type="submit"
+                                                    class="btn btn-success-sm btn-outline-info">edit</button>&nbsp;
+                                                <button type="submit"
+                                                    class="btn btn-success-sm btn-outline-danger">delete</button>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                @endforeach
+
+                                {{-- <tr class="">
+                                    <td scope="row">Item</td>
+                                    <td>Item</td>
+                                    <td>Item</td>
+                                </tr> --}}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
                 <div class="col-md-2"></div>
             </div>
         </div>

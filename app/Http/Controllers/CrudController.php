@@ -14,7 +14,8 @@ class CrudController extends Controller
      */
     public function index()
     {
-        return view('crud.index');
+        $data=Crud::get();
+        return view('crud.index', compact('data'));
     }
 
     /**
@@ -50,6 +51,7 @@ class CrudController extends Controller
      */
     public function show(Crud $crud)
     {
+
         return view('crud.show');
     }
 
@@ -84,6 +86,6 @@ class CrudController extends Controller
      */
     public function destroy(Crud $crud)
     {
-        //
+        
     }
 }
