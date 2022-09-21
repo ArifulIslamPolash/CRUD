@@ -14,8 +14,8 @@ class CrudController extends Controller
      */
     public function index()
     {
-        $data=Crud::get();
-        return view('crud.index', compact('data'));
+        $crud=Crud::get();
+        return view('crud.index', compact('crud'));
     }
 
     /**
@@ -52,7 +52,7 @@ class CrudController extends Controller
     public function show(Crud $crud)
     {
 
-        return view('crud.show');
+        return view('crud.show',compact('crud'));
     }
 
     /**
@@ -63,7 +63,9 @@ class CrudController extends Controller
      */
     public function edit(Crud $crud)
     {
-        return view('crud.edit');
+        // $crud = Crud::all();
+        // return $crud;
+        return view('crud.edit' ,compact('crud'));
     }
 
     /**
@@ -75,7 +77,10 @@ class CrudController extends Controller
      */
     public function update(Request $request, Crud $crud)
     {
-        //
+        // dd($request);
+        $crud->update($request->all());
+        return redirect()->route('crud.index');
+
     }
 
     /**
@@ -86,6 +91,8 @@ class CrudController extends Controller
      */
     public function destroy(Crud $crud)
     {
-        
+        dd($crud);
+        $crud->delete();
+        return redirect()->route('crud.index');
     }
 }

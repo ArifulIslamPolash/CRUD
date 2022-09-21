@@ -38,7 +38,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($data as $key => $value)
+                                @foreach ($crud as $key => $value)
                                     <tr class="">
                                         <td scope="row">{{ $key + 1 }}</td>
                                         <td>{{ $value->name }}</td>
@@ -47,24 +47,26 @@
                                         <td>{{ $value->address }}</td>
                                         <td>{{ $value->city }}</td>
                                         <td>
+
                                             <div class="d-flex">
-                                                <button type="submit"
-                                                    class="btn btn-success-sm btn-outline-success">show</button>&nbsp;
-                                                <button type="submit"
-                                                    class="btn btn-success-sm btn-outline-info">edit</button>&nbsp;
-                                                <button type="submit"
-                                                    class="btn btn-success-sm btn-outline-danger">delete</button>
+                                                <a href="{{ route('crud.show', $value->id) }}"
+                                                    class="btn btn-success btn-sm">show</a>&nbsp;
+                                                <a href="{{ route('crud.edit', $value->id) }}"
+                                                    class="btn btn-info btn-sm">edit</a>&nbsp;
+                                                <form action="{{ route('crud.destroy', $value->id) }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <a href="{{ route('crud.destroy', $value->id) }}"
+                                                        class="btn btn-danger btn-sm">delete</a>&nbsp;
+                                                </form>
                                             </div>
+
                                         </td>
 
                                     </tr>
                                 @endforeach
 
-                                {{-- <tr class="">
-                                    <td scope="row">Item</td>
-                                    <td>Item</td>
-                                    <td>Item</td>
-                                </tr> --}}
+
                             </tbody>
                         </table>
                     </div>
