@@ -91,7 +91,7 @@ class CrudController extends Controller
      */
     public function destroy(Crud $crud)
     {
-        dd($crud);
+        // dd($crud);
         $crud->delete();
         return redirect()->route('crud.index');
     }

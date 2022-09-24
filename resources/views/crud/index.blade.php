@@ -56,8 +56,9 @@
                                                 <form action="{{ route('crud.destroy', $value->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <a href="{{ route('crud.destroy', $value->id) }}"
-                                                        class="btn btn-danger btn-sm">delete</a>&nbsp;
+                                                    {{-- <a href="{{ route('crud.destroy', $value->id) }}" --}}
+                                                    {{-- class="btn btn-danger btn-sm">delete</a>&nbsp; --}}
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
                                                 </form>
                                             </div>
 
