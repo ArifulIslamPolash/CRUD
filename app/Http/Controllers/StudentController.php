@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Task;
-use App\Http\Requests\StoreTaskRequest;
-use App\Http\Requests\UpdateTaskRequest;
-// use App\Models\Task;
+use App\Models\Student;
+use Illuminate\Http\Request;
 
-class TaskController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +14,7 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $tasks=Task::all();
-        // print_r($tasks) ;
-        return view('task.index', compact('tasks'));
+        //
     }
 
     /**
@@ -28,29 +24,27 @@ class TaskController extends Controller
      */
     public function create()
     {
-        return view('task.create');
-        // return redirect()->route('task.index');
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreTaskRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreTaskRequest $request)
+    public function store(Request $request)
     {
-
-        dd($request);
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Task  $task
+     * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function show(Task $task)
+    public function show(Student $student)
     {
         //
     }
@@ -58,10 +52,10 @@ class TaskController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Task  $task
+     * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function edit(Task $task)
+    public function edit(Student $student)
     {
         //
     }
@@ -69,11 +63,11 @@ class TaskController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateTaskRequest  $request
-     * @param  \App\Models\Task  $task
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateTaskRequest $request, Task $task)
+    public function update(Request $request, Student $student)
     {
         //
     }
@@ -81,10 +75,10 @@ class TaskController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Task  $task
+     * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Task $task)
+    public function destroy(Student $student)
     {
         //
     }

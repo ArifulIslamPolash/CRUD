@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudController;
+use App\Http\Controllers\TaskController;
+use App\Http\Controllers\PDFController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +21,10 @@ Route::get('/', function () {
 });
 
 Route::resource('/crud',CrudController::class);
+Route::resource('/task',TaskController::class);
 // Route::resource('photos', PhotoController::class);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/generate-pdf', [PDFController::class, 'generatePDF']);
